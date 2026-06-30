@@ -63,6 +63,16 @@ std::string readLine(int fd) {
     return response;
 }
 
+std::ofstream openLogFile() {
+    std::ofstream logFile("logs/communication_log.txt", std::ios::app);
+
+    if (!logFile.is_open()) {
+        logFile.open("../logs/communication_log.txt", std::ios::app);
+    }
+
+    return logFile;
+}
+
 int main() {
     std::string port;
     std::string input;
@@ -83,7 +93,11 @@ int main() {
         return 1;
     }
 
-    std::ofstream logFile("logs/communication_log.txt", std::ios::app);
+    std::ofstream logFile = openLogFile();
+
+    if (!logFile.is_open()) {
+        std::cout << "Warnung: Protokolldatei konnte nicht geöffnet werden." << std::endl;
+    }
 
     std::cout << "UART-Kalkulator gestartet." << std::endl;
     std::cout << "Zum Beenden q eingeben." << std::endl;
@@ -99,12 +113,16 @@ int main() {
         std::string message = input + "\n";
 
         write(fd, message.c_str(), message.length());
-        logFile << "Gesendet: " << input << std::endl;
+        if (logFile.is_open()) {
+            logFile << "Gesendet: " << input << std::endl;
+        }
 
         std::string result = readLine(fd);
 
         std::cout << "Antwort vom Mikrocontroller: " << result << std::endl;
-        logFile << "Empfangen: " << result << std::endl;
+        if (logFile.is_open()) {
+            logFile << "Empfangen: " << result << std::endl;
+        }
     }
 
     close(fd);

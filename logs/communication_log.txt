@@ -6,5 +6,11 @@ Gesendet: 875-324
 Empfangen: 551
 Gesendet: 960/15
 Empfangen: 64
-Gesendet: 25/0q
+Gesendet: 25/0
+Empfangen: Fehler: Division durch 0
+Gesendet: 12&4
+Empfangen: Fehler: Ungueltige Eingabe
+Gesendet: 100+
+Empfangen: Fehler: Ungueltige Eingabe
+Gesendet: abc+5
 Empfangen: Fehler: Ungueltige Eingabe

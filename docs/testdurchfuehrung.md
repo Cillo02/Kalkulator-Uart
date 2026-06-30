@@ -12,6 +12,9 @@ Für den Test wurde der serielle Port /dev/cu.usbmodem1301 verwendet.
 - 156+289 = 445
 - 875-324 = 551
 - 960/15 = 64
-- 25/0 = Fehler: Ungueltige Eingabe
+- 25/0 = Fehler: Division durch 0
+- 12&4 = Fehler: Ungueltige Eingabe
+- 100+ = Fehler: Ungueltige Eingabe
+- abc+5 = Fehler: Ungueltige Eingabe
 
 Die Kommunikation zwischen PC-Anwendung und Mikrocontroller wurde erfolgreich getestet. Die gesendeten und empfangenen Daten wurden zusätzlich in der Datei logs/communication_log.txt protokolliert.
