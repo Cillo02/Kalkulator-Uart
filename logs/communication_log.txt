@@ -1,0 +1,10 @@
+Gesendet: 34*72
+Empfangen: 2448
+Gesendet: 156+289
+Empfangen: 445
+Gesendet: 875-324
+Empfangen: 551
+Gesendet: 960/15
+Empfangen: 64
+Gesendet: 25/0q
+Empfangen: Fehler: Ungueltige Eingabe
